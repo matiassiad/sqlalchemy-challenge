@@ -40,6 +40,20 @@ SQLAlchemy: It's a SQL toolkit and Object-Relational Mapping (ORM) library for P
 pip install sqlalchemy
 ```
 
+Install Flask: Flask is the Python web framework that allows you to create web applications. You can install Flask by running the following command in your terminal:
+
+```bash
+pip install Flask
+```
+
+Install jsonify: jsonify is a function in Flask that converts Python objects to JSON responses. However, jsonify is already included in Flask, so you don't need to install it separately. Just make sure you have installed Flask as indicated in the previous step.
+
+After running these commands, Flask and jsonify will be installed in your Python environment, and you'll be able to import them in your Python scripts using the import statement you provided:
+
+```bash
+from flask import Flask, jsonify
+```
+
 Once you have installed these libraries, you will be able to run the code smoothly. Make sure you also have a Python environment set up correctly so that you can import these libraries in your scripts.
 
 
@@ -71,24 +85,30 @@ I linked Python to the database by creating a SQLAlchemy session.
 
 Designed a Flask API based on the developed queries. I used Flask to create routes as follows:
 
-1. /
+1. / 
+   
 Start on the home page.
 
 List all available routes.
 
 2. /api/v1.0/precipitation
+   
 I converted the query results into a dictionary using the date as the key and prcp as the value.
 
 I returned the JSON representation of your dictionary.
 
 3. /api/v1.0/stations
+   
 I returned a JSON list of stations in the dataset.
+
 4. /api/v1.0/tobs
+   
 I consulted the dates and temperature observations of the most active season for the previous year of data.
 
 I returned a JSON list of temperature observations from the previous year.
 
 5. /api/v1.0/<home> and /api/v1.0/<home>/<end>
+   
 I returned a JSON list of the minimum temperature, average temperature, and maximum temperature for a specific start or start-end range.
 
 For a specific start, I calculated TMIN, TAVG and TMAX for all dates greater than or equal to the start date.
